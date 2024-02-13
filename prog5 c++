@@ -1,20 +1,37 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <ctime>
 
-int main(){
-    std::vector<int>arr1={3,8,2,5};
-    std::vector<int>arr2={6,1,9,4};
-    std::vector<int>result(arr1.size());
-    
-    for(size_t i=0; i<arr1.size();++i){
-        result[i]=std::max(arr1[i],arr2[i]);
+int main() {
+    // Генерируем два вектора одинакового размера со случайными числами
+    srand(time(0));
+    std::vector<int> vector1;
+    std::vector<int> vector2;
+    for (int i = 0; i < 5; ++i) {
+        vector1.push_back(rand() % 100 + 1);
+        vector2.push_back(rand() % 100 + 1);
     }
-    // Вывод резудьтата
-    std::cout<<"результат:";
-    for (int num:result){
-        std::cout<<num<<"";
+    std::cout << "Вектор 1:";
+    for (int num : vector1) {
+        std::cout << " " << num;
     }
-    std::cout<<std::endl;
+    std::cout << "\n";
+    std::cout << "Вектор 2:";
+    for (int num : vector2) {
+        std::cout << " " << num;
+    }
+    std::cout << "\n";
+    // Создаем третий вектор, каждый элемент которого равен максимальному из соответствующих элементов в vector1 и vector2
+    std::vector<int> vector3;
+    for (size_t i = 0; i < vector1.size(); ++i) {
+        vector3.push_back(std::max(vector1[i], vector2[i]));
+    }
+    std::cout << "Вектор 3:";
+    for (int num : vector3) {
+        std::cout << " " << num;
+    }
+    std::cout << "\n";
+
     return 0;
 }
