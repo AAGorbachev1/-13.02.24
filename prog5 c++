@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main(){
+    std::vector<int>arr1={3,8,2,5};
+    std::vector<int>arr2={6,1,9,4};
+    std::vector<int>result(arr1.size());
+    
+    for(size_t i=0; i<arr1.size();++i){
+        result[i]=std::max(arr1[i],arr2[i]);
+    }
+    // Вывод резудьтата
+    std::cout<<"результат:";
+    for (int num:result){
+        std::cout<<num<<"";
+    }
+    std::cout<<std::endl;
+    return 0;
+}
