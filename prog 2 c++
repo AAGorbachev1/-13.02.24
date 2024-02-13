@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"введите число n(99<n<100, число едениц в n не равно нулю):";
+    cin>>n;
+    int x= (p%10)*100+(p/10);
+    cout<<"число x равно:"<<x<<endl;
+    return 0;
+}
