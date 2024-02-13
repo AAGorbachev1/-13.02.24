@@ -1,0 +1,15 @@
+def is_palindrome(num):
+    return str(num) == str(num)[::-1]
+
+def check_palindrome(num1, num2):
+    if is_palindrome(num1) or is_palindrome(num2):
+        return True
+    return False
+
+num1 = 12321
+num2 = 45678
+
+if check_palindrome(num1, num2):
+    print("Хотя бы одно из чисел является палиндромом.")
+else:
+    print("Ни одно из чисел не является палиндромом.")
